@@ -413,7 +413,7 @@ const server = http.createServer((req, res) => {
                             span{
                                 display: inline-block;
 
-                                width: 300px;
+                                width: 250px;
                                 height: 20px;
 
                             }
