@@ -409,6 +409,8 @@ const server = http.createServer((req, res) => {
                             body{
                                 min-width: 2000px;
                                 
+                                max-width: 3000px;
+                                
                             }
 
                             span{
