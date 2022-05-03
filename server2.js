@@ -437,7 +437,7 @@ const server = http.createServer((req, res) => {
                             }
                             
                             .btn0{
-                                margin-left: 160px;
+                                margin-left: 154px;
                             }
                             
                             button:not(:first-child) {
