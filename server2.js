@@ -408,13 +408,14 @@ const server = http.createServer((req, res) => {
 
                             body{
                                 min-width: 1456px;
+                                
                             }
 
                             span{
                                 display: inline-block;
 
                                 width: 250px;
-                                height: 20px;
+                                
                                 
                                 text-align: center;
                                 
@@ -431,7 +432,7 @@ const server = http.createServer((req, res) => {
 
                             div{
                                 max-width: 1644px;
-                                max-height: 26px;
+                                min-height: 26px;
 
                             }
                             
