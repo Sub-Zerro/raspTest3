@@ -403,7 +403,7 @@ const server = http.createServer((req, res) => {
             <meta charset="UTF-8">
                          <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
                                      <meta http-equiv="X-UA-Compatible" content="ie=edge">
-                         <title>Schedule 17 of the Gymnasium</title>
+                         <title>Расписание 17 гимназия</title>
                          <style>
 
                             body{
@@ -521,7 +521,7 @@ const server = http.createServer((req, res) => {
         } // // вывод времени через цикл, берущий за основу колличество ячеек времени в obj.times
     });
 
-   // res.end(`<h1>Расписание</h1>`);
+    // res.end(`<h1>Расписание</h1>`);
 })
 
 server.listen(process.env.PORT||3000, () => {
