@@ -415,13 +415,32 @@ const server = http.createServer((req, res) => {
 
                                 width: 250px;
                                 height: 20px;
+                                
+                                text-align: center;
+                                
+                                /*border: 1px solid red;*/
+                                
+                                
 
+                            }
+                            
+                            .headingsDiv{
+                                display: inline;
+                                justify-content: space-between;
                             }
 
                             div{
                                 max-width: 1644px;
                                 max-height: 26px;
 
+                            }
+                            
+                            .btn0{
+                                margin-left: 160px;
+                            }
+                            
+                            button:not(:first-child) {
+                                margin-left: 220px;
                             }
 
                             /*@media screen and (orientation: landscape){*/
@@ -441,10 +460,12 @@ const server = http.createServer((req, res) => {
                 </script>
 
                 <div><b>${obj.dayOfWeek[0]}</b></div><br>
+                
+                <div class="headingsDiv">
 
                 Классы:
 
-
+                    
 
             </body>
             </html>
@@ -457,12 +478,18 @@ const server = http.createServer((req, res) => {
         for (let i = 0; i < obj.headings.length; i++) {
             res.write(`
 
-                <button id="btn${[i]}">${obj.headings[i]}</button>
+                
+                    <button class="btn${[i]}">${obj.headings[i]}</button>
+                
+
+                
 
 
             `);
         } // вывод классов через цикл, берущий за основу колличество классов в obj.headings
 
+
+        res.write(`</div>`);
         res.write(`<br>`)
 
         for (let i = 0; i < obj.time.length; i++) {
