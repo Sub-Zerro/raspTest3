@@ -416,7 +416,7 @@ const server = http.createServer((req, res) => {
                             span{
                                 display: inline-block;
 
-                                width: 220px;
+                                width: 250px;
                                 
                                 
                                 text-align: center;
