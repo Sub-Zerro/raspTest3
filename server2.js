@@ -407,7 +407,7 @@ const server = http.createServer((req, res) => {
                          <style>
 
                             body{
-                                min-width: 1456px;
+                                min-width: 2000px;
                                 
                             }
 
