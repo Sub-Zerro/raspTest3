@@ -433,7 +433,7 @@ const server = http.createServer((req, res) => {
                             }
 
                             div{
-                                max-width: 1644px;
+                                max-width: 3000px;
                                 min-height: 20px;
 
                             }
