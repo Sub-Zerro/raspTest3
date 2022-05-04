@@ -522,21 +522,22 @@ const server = http.createServer((req, res) => {
                     </div>
         `);
         } // // вывод времени через цикл, берущий за основу колличество ячеек времени в obj.times
+
+        res.write(`
+
+                <br><br><br><br>
+            
+                <div class="footer">
+                    <h5>Сайт разработал: Елембаев-Беломорских Роман, 7в</h5>
+                </div>
+        `);
     });
 
-    res.write(`
-
-            <br><br><br><br>
-            
-            <div class="footer">
-                <h5>Сайт разработал: Елембаев-Беломорских Роман, 7в</h5>
-            </div>
-    `);
 
     // res.end(`<h1>Расписание</h1>`);
 })
 
-server.listen(process.env.PORT||3000, () => {
+server.listen(process.env.PORT || 3000, () => {
     console.log(`server is running in port:3000...`);
 })
 
