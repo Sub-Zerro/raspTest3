@@ -557,14 +557,14 @@ const server = http.createServer((req, res) => {
             //
             // writeMotivation(NowDay);
 
-            // res.write(`
-            //
-            //     <br><br><br><br>
-            //
-            //     <div class="footer">
-            //         <h5>Сайт разработал: Елембаев-Беломорских Роман, 7в</h5>
-            //     </div>
-            // `);
+            res.write(`
+
+                <br><br><br><br>
+
+                <div class="footer">
+                    <h5>Сайт разработал: Елембаев-Беломорских Роман, 7в</h5>
+                </div>
+            `);
 
             res.end();
         });
