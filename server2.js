@@ -562,7 +562,7 @@ const server = http.createServer((req, res) => {
                 <br><br><br><br>
 
                 <div class="footer">
-                    <h5>Сайт разработал: Елембаев-Беломорских Роман, 7в</h5>
+                    <h5>Сайт разработали: Елембаев-Беломорских Роман, Жиделев Николай,7в</h5>
                 </div>
             `);
 
@@ -617,6 +617,9 @@ const server = http.createServer((req, res) => {
                 <title>Расписание 17 гимназии</title>
                 
                 <style>
+                    body{
+                    background-color:#5FBDCE;
+                }
                     .lastUpdates{
                         display: inline-block;
                     }
@@ -624,6 +627,32 @@ const server = http.createServer((req, res) => {
                     .lastSecondUpdates{
                         display: inline-block;
                     }
+                    li{
+                        list-style-type: none;
+                    }
+                    a{
+                            text-decoration: none;
+                            display: inline-block;
+                            color: #2E2E2E;
+                            padding: 10px 30px;
+                            margin: 10px 20px;
+                            border-radius: 10px;
+                            font-family: 'Montserrat', sans-serif;
+                            text-transform: uppercase;
+                            letter-spacing: 2px;
+                            background-color:#9EEFE1;
+                            background-size: 200% auto;
+                          }
+                          a:hover {
+                            background-position: right center;
+                          }
+                          .now{
+                            border: 5px solid red;
+                          }
+                          .last{
+                            background-color:#2cdabc;
+
+                          }
                 </style>
                 
             </head>
@@ -640,12 +669,12 @@ const server = http.createServer((req, res) => {
                 </ul>
                 
                 <ul class="lastSecondUpdates">
-                    <li><a href="/lastSecondPn">Позапрошлый понедельник</a></li>
-                    <li><a href="/lastSecondVt">Позапрошлый вторник</a></li>
-                    <li><a href="/lastSecondSr">Позапрошлый среда</a></li>
-                    <li><a href="/lastSecondCh">Позапрошлый четверг</a></li>
-                    <li><a href="/lastSecondPt">Позапрошлый пятница</a></li>
-                    <li><a href="/lastSecondSb">Позапрошлый суббота</a></li>
+                    <li><a href="/lastSecondPn">Текущий понедельник</a></li>
+                    <li><a href="/lastSecondVt">Текущий вторник</a></li>
+                    <li><a href="/lastSecondSr">Текущий среда</a></li>
+                    <li><a href="/lastSecondCh">Текущий четверг</a></li>
+                    <li><a href="/lastSecondPt">Текущий пятница</a></li>
+                    <li><a href="/lastSecondSb">Текущий суббота</a></li>
                 </ul>
                 
                 
