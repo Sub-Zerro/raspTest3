@@ -390,6 +390,12 @@ const server = http.createServer((req, res) => {
                         let fifthDiscipline${[i]} = document.getElementById('five');
                         let sixthDiscipline${[i]} = document.getElementById('six');
                         console.log(firstDiscipline${[i]});
+                        let firstKab${[i]} = document.getElementById('oneKab');
+                        let secondKab${[i]} = document.getElementById('twoKab');
+                        let thirdKab${[i]} = document.getElementById('threeKab');
+                        let fourthKab${[i]} = document.getElementById('fourKab');
+                        let fifthKab${[i]} = document.getElementById('fiveKab');
+                        let sixthKab${[i]} = document.getElementById('sixKab');
                         
                         zgolovokIzmeneny${[i]}.append(a${[i]});
                         firstDiscipline${[i]}.textContent = '${disciplineObj.coloumns[0][0] ? disciplineObj.coloumns[0][0] : ''}';
@@ -398,6 +404,13 @@ const server = http.createServer((req, res) => {
                         fourthDiscipline${[i]}.textContent = '${disciplineObj.coloumns[0][3] ? disciplineObj.coloumns[0][3] : ''}';
                         fifthDiscipline${[i]}.textContent = '${disciplineObj.coloumns[0][4] ? disciplineObj.coloumns[0][4] : ''}';
                         sixthDiscipline${[i]}.textContent = '${disciplineObj.coloumns[0][5] ? disciplineObj.coloumns[0][5] : ''}';
+                        
+                        firstKab${[i]}.textContent = '${obj.classRoom[0] ? obj.classRoom[0] : '    '}';
+                        secondKab${[i]}.textContent = '${obj.classRoom[1] ? obj.classRoom[1] : '    '}';
+                        thirdKab${[i]}.textContent = '${obj.classRoom[2] ? obj.classRoom[2] : '    '}';
+                        fourthKab${[i]}.textContent = '${obj.classRoom[3] ? obj.classRoom[3] : '    '}';
+                        fifthKab${[i]}.textContent = '${obj.classRoom[4] ? obj.classRoom[4] : '    '}';
+                        sixthKab${[i]}.textContent = '${obj.classRoom[5] ? obj.classRoom[5] : '    '}';
                         
                         const checkA${[i]} = '7а';
                         const checkB${[i]} = '7б';
@@ -427,6 +440,13 @@ const server = http.createServer((req, res) => {
                     
                     let zgolovokIzmenenyV2 = document.getElementById('izmRasp');
                     
+                    let firstKabV2${[i]} = document.getElementById('oneKab');
+                    let secondKabV2${[i]} = document.getElementById('twoKab');
+                    let thirdKabV2${[i]} = document.getElementById('threeKab');
+                    let fourthKabV2${[i]} = document.getElementById('fourKab');
+                    let fifthKabV2${[i]} = document.getElementById('fiveKab');
+                    let sixthKabV2${[i]} = document.getElementById('sixKab');
+                    
                     let buttons = document.querySelectorAll('button');
                     console.log(buttons);
                     let btn1 = buttons[0];
@@ -440,14 +460,26 @@ const server = http.createServer((req, res) => {
                     let btn9 = buttons[8] ? buttons[8] : null;
                     let btn10 = buttons[9] ? buttons[9] : null;
                     
-                    btn1.addEventListener('click', ()=>{
-                        oneDiscipline.textContent = '${disciplineObj.coloumns[0][0] ? disciplineObj.coloumns[0][0] : ''}';
-                        twoDiscipline.textContent = '${disciplineObj.coloumns[0][1] ? disciplineObj.coloumns[0][1] : ''}';
-                        threeDiscipline.textContent = '${disciplineObj.coloumns[0][2] ? disciplineObj.coloumns[0][2] : ''}';
-                        fourDiscipline.textContent = '${disciplineObj.coloumns[0][3] ? disciplineObj.coloumns[0][3] : ''}';
-                        fiveDiscipline.textContent = '${disciplineObj.coloumns[0][4] ? disciplineObj.coloumns[0][4] : ''}';
-                        sixDiscipline.textContent = '${disciplineObj.coloumns[0][5] ? disciplineObj.coloumns[0][5] : ''}';
-                    })
+                    if (btn1!=null){
+                        btn1.addEventListener('click', ()=>{
+                            oneDiscipline.textContent = '${disciplineObj.coloumns[0][0] ? disciplineObj.coloumns[0][0] : ''}';
+                            twoDiscipline.textContent = '${disciplineObj.coloumns[0][1] ? disciplineObj.coloumns[0][1] : ''}';
+                            threeDiscipline.textContent = '${disciplineObj.coloumns[0][2] ? disciplineObj.coloumns[0][2] : ''}';
+                            fourDiscipline.textContent = '${disciplineObj.coloumns[0][3] ? disciplineObj.coloumns[0][3] : ''}';
+                            fiveDiscipline.textContent = '${disciplineObj.coloumns[0][4] ? disciplineObj.coloumns[0][4] : ''}';
+                            sixDiscipline.textContent = '${disciplineObj.coloumns[0][5] ? disciplineObj.coloumns[0][5] : ''}';
+                        
+                            firstKabV2${[i]}.textContent = '${obj.classRoom[0] ? obj.classRoom[0] : ''}';
+                            secondKabV2${[i]}.textContent = '${obj.classRoom[1] ? obj.classRoom[1] : ''}';
+                            thirdKabV2${[i]}.textContent = '${obj.classRoom[2] ? obj.classRoom[2] : ''}';
+                            fourthKabV2${[i]}.textContent = '${obj.classRoom[3] ? obj.classRoom[3] : ''}';
+                            fifthKabV2${[i]}.textContent = '${obj.classRoom[4] ? obj.classRoom[4] : ''}';
+                            sixthKabV2${[i]}.textContent = '${obj.classRoom[5] ? obj.classRoom[5] : ''}';
+                        })
+                    }
+                    
+                    
+                    
                     
                     if (btn2!=null){
                         btn2.addEventListener('click', ()=>{
@@ -457,6 +489,13 @@ const server = http.createServer((req, res) => {
                         fourDiscipline.textContent = '${obj.anotherDisciplines[0][3] ? obj.anotherDisciplines[0][3] : ''}';
                         fiveDiscipline.textContent = '${obj.anotherDisciplines[0][4] ? obj.anotherDisciplines[0][4] : ''}';
                         sixDiscipline.textContent = '${obj.anotherDisciplines[0][5] ? obj.anotherDisciplines[0][5] : ''}';
+                        
+                        firstKabV2${[i]}.textContent = '${obj.anotherClassrooms[0][0] ? obj.anotherClassrooms[0][0] : ''}';
+                        secondKabV2${[i]}.textContent = '${obj.anotherClassrooms[0][1] ? obj.anotherClassrooms[0][1] : ''}';
+                        thirdKabV2${[i]}.textContent = '${obj.anotherClassrooms[0][2] ? obj.anotherClassrooms[0][2] : ''}';
+                        fourthKabV2${[i]}.textContent = '${obj.anotherClassrooms[0][3] ? obj.anotherClassrooms[0][3] : ''}';
+                        fifthKabV2${[i]}.textContent = '${obj.anotherClassrooms[0][4] ? obj.anotherClassrooms[0][4] : ''}';
+                        sixthKabV2${[i]}.textContent = '${obj.anotherClassrooms[0][5] ? obj.anotherClassrooms[0][5] : ''}';
                         })
                     }
                     
@@ -468,6 +507,13 @@ const server = http.createServer((req, res) => {
                         fourDiscipline.textContent = '${obj.anotherDisciplines[1][3] ? obj.anotherDisciplines[1][3] : ''}';
                         fiveDiscipline.textContent = '${obj.anotherDisciplines[1][4] ? obj.anotherDisciplines[1][4] : ''}';
                         sixDiscipline.textContent = '${obj.anotherDisciplines[1][5] ? obj.anotherDisciplines[1][5] : ''}';
+                        
+                        firstKabV2${[i]}.textContent = '${obj.anotherClassrooms[1][0] ? obj.anotherClassrooms[1][0] : ''}';
+                        secondKabV2${[i]}.textContent = '${obj.anotherClassrooms[1][1] ? obj.anotherClassrooms[1][1] : ''}';
+                        thirdKabV2${[i]}.textContent = '${obj.anotherClassrooms[1][2] ? obj.anotherClassrooms[1][2] : ''}';
+                        fourthKabV2${[i]}.textContent = '${obj.anotherClassrooms[1][3] ? obj.anotherClassrooms[1][3] : ''}';
+                        fifthKabV2${[i]}.textContent = '${obj.anotherClassrooms[1][4] ? obj.anotherClassrooms[1][4] : ''}';
+                        sixthKabV2${[i]}.textContent = '${obj.anotherClassrooms[1][5] ? obj.anotherClassrooms[1][5] : ''}';
                         })
                     }
                     
@@ -479,6 +525,13 @@ const server = http.createServer((req, res) => {
                         fourDiscipline.textContent = '${obj.anotherDisciplines[2][3] ? obj.anotherDisciplines[2][3] : ''}';
                         fiveDiscipline.textContent = '${obj.anotherDisciplines[2][4] ? obj.anotherDisciplines[2][4] : ''}';
                         sixDiscipline.textContent = '${obj.anotherDisciplines[2][5] ? obj.anotherDisciplines[2][5] : ''}';
+                        
+                        firstKabV2${[i]}.textContent = '${obj.anotherClassrooms[2][0] ? obj.anotherClassrooms[2][0] : ''}';
+                        secondKabV2${[i]}.textContent = '${obj.anotherClassrooms[2][1] ? obj.anotherClassrooms[2][1] : ''}';
+                        thirdKabV2${[i]}.textContent = '${obj.anotherClassrooms[2][2] ? obj.anotherClassrooms[2][2] : ''}';
+                        fourthKabV2${[i]}.textContent = '${obj.anotherClassrooms[2][3] ? obj.anotherClassrooms[2][3] : ''}';
+                        fifthKabV2${[i]}.textContent = '${obj.anotherClassrooms[2][4] ? obj.anotherClassrooms[2][4] : ''}';
+                        sixthKabV2${[i]}.textContent = '${obj.anotherClassrooms[2][5] ? obj.anotherClassrooms[2][5] : ''}';
                         })
                     }
                     
@@ -490,6 +543,13 @@ const server = http.createServer((req, res) => {
                         fourDiscipline.textContent = '${obj.anotherDisciplines[3][3] ? obj.anotherDisciplines[3][3] : ''}';
                         fiveDiscipline.textContent = '${obj.anotherDisciplines[3][4] ? obj.anotherDisciplines[3][4] : ''}';
                         sixDiscipline.textContent = '${obj.anotherDisciplines[3][5] ? obj.anotherDisciplines[3][5] : ''}';
+                        
+                        firstKabV2${[i]}.textContent = '${obj.anotherClassrooms[4][0] ? obj.anotherClassrooms[4][0] : ''}';
+                        secondKabV2${[i]}.textContent = '${obj.anotherClassrooms[4][1] ? obj.anotherClassrooms[4][1] : ''}';
+                        thirdKabV2${[i]}.textContent = '${obj.anotherClassrooms[4][2] ? obj.anotherClassrooms[4][2] : ''}';
+                        fourthKabV2${[i]}.textContent = '${obj.anotherClassrooms[4][3] ? obj.anotherClassrooms[4][3] : ''}';
+                        fifthKabV2${[i]}.textContent = '${obj.anotherClassrooms[4][4] ? obj.anotherClassrooms[4][4] : ''}';
+                        sixthKabV2${[i]}.textContent = '${obj.anotherClassrooms[4][5] ? obj.anotherClassrooms[4][5] : ''}';
                         })
                     }
                     
@@ -512,6 +572,13 @@ const server = http.createServer((req, res) => {
                         fourDiscipline.textContent = '${obj.anotherDisciplines[5][3] ? obj.anotherDisciplines[5][3] : ''}';
                         fiveDiscipline.textContent = '${obj.anotherDisciplines[5][4] ? obj.anotherDisciplines[5][4] : ''}';
                         sixDiscipline.textContent = '${obj.anotherDisciplines[5][5] ? obj.anotherDisciplines[5][5] : ''}';
+                        
+                        firstKabV2${[i]}.textContent = '${obj.anotherClassrooms[5][0] ? obj.anotherClassrooms[5][0] : ''}';
+                        secondKabV2${[i]}.textContent = '${obj.anotherClassrooms[5][1] ? obj.anotherClassrooms[5][1] : ''}';
+                        thirdKabV2${[i]}.textContent = '${obj.anotherClassrooms[5][2] ? obj.anotherClassrooms[5][2] : ''}';
+                        fourthKabV2${[i]}.textContent = '${obj.anotherClassrooms[5][3] ? obj.anotherClassrooms[5][3] : ''}';
+                        fifthKabV2${[i]}.textContent = '${obj.anotherClassrooms[5][4] ? obj.anotherClassrooms[5][4] : ''}';
+                        sixthKabV2${[i]}.textContent = '${obj.anotherClassrooms[5][5] ? obj.anotherClassrooms[5][5] : ''}';
                         })
                     }
                 </script>
@@ -955,13 +1022,13 @@ const server = http.createServer((req, res) => {
                         </ul>
                         
                         <ul class="rasp-TABLE-ul-class">
-                            <li class="rasp-TABLE-class-li">Предмет</li>
-                            <li class="rasp-TABLE-class-li"></li>
-                            <li class="rasp-TABLE-class-li"></li>
-                            <li class="rasp-TABLE-class-li"></li>
-                            <li class="rasp-TABLE-class-li"></li>
-                            <li class="rasp-TABLE-class-li"></li>
-                            <li class="rasp-TABLE-class-li"></li>
+                            <li class="rasp-TABLE-class-li">Кабинет</li>
+                            <li class="rasp-TABLE-class-li" id="oneKab"></li>
+                            <li class="rasp-TABLE-class-li" id="twoKab"></li>
+                            <li class="rasp-TABLE-class-li" id="threeKab"></li>
+                            <li class="rasp-TABLE-class-li" id="fourKab"></li>
+                            <li class="rasp-TABLE-class-li" id="fiveKab"></li>
+                            <li class="rasp-TABLE-class-li" id="sixKab"></li>
                         </ul>
                         
                         
