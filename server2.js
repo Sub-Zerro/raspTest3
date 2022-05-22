@@ -514,9 +514,6 @@ const server = http.createServer((req, res) => {
                         sixDiscipline.textContent = '${obj.anotherDisciplines[5][5] ? obj.anotherDisciplines[5][5] : ''}';
                         })
                     }
-                    
-                    
-                    
                 </script>
             `)
 
@@ -897,12 +894,12 @@ const server = http.createServer((req, res) => {
                         <div class="weekDay">
                             <ul class="weekDay-ul">
                                 <li class="weekDay-li-week">Текущая неделя</li>
-                                <li><a href="/nowUpdates" class="weekDay-li">Понедельник</a></li>
-                                <li><a href="/lastVt" class="weekDay-li">Вторник</a></li>
-                                <li><a href="/lastSr" class="weekDay-li">Среда</a></li>
-                                <li><a href="/lastCh" class="weekDay-li">Четверг</a></li>
-                                <li><a href="/lastPt" class="weekDay-li">Пятница</a></li>
-                                <li><a href="/lastSb" class="weekDay-li">Суббота</a></li>
+                                <li><a href="/nowPn" class="weekDay-li">Понедельник</a></li>
+                                <li><a href="/nowVt" class="weekDay-li">Вторник</a></li>
+                                <li><a href="/nowSr" class="weekDay-li">Среда</a></li>
+                                <li><a href="/nowCh" class="weekDay-li">Четверг</a></li>
+                                <li><a href="/nowPt" class="weekDay-li">Пятница</a></li>
+                                <li><a href="/nowSb" class="weekDay-li">Суббота</a></li>
                                 <li class="weekDay-li-week-change" class="weekDay-li">Другая неделя</li>
                             </ul> 
                         </div>
@@ -983,54 +980,54 @@ const server = http.createServer((req, res) => {
         writeHTML("book.xlsx");
     }
 
-    if(req.url === '/lastPn'){
+    if(req.url === '/nowPn'){
         writeHTML("excels/week1/bookPn.xlsx");
     }
 
-    if(req.url === '/lastVt'){
+    if(req.url === '/nowVt'){
         writeHTML("excels/week1/bookVt.xlsx");
     }
 
-    if(req.url === '/lastSr'){
+    if(req.url === '/nowSr'){
         writeHTML("excels/week1/bookSr.xlsx");
     }
 
-    if(req.url === '/lastCh'){
+    if(req.url === '/nowCh'){
         writeHTML("excels/week1/bookCh.xlsx");
     }
 
-    if(req.url === '/lastPt'){
+    if(req.url === '/nowPt'){
         writeHTML("excels/week1/bookPt.xlsx");
     }
 
-    if(req.url === '/lastSb'){
+    if(req.url === '/nowSb'){
         writeHTML("excels/week1/bookSb.xlsx");
     }
 
 
 
 
-    if(req.url === '/lastSecondPn'){
+    if(req.url === '/lastPn'){
         writeHTML("excels/week2/bookPn.xlsx");
     }
 
-    if(req.url === '/lastSecondVt'){
+    if(req.url === '/lastVt'){
         writeHTML("excels/week2/bookVt.xlsx");
     }
 
-    if(req.url === '/lastSecondSr'){
+    if(req.url === '/lastSr'){
         writeHTML("excels/week2/bookSr.xlsx");
     }
 
-    if(req.url === '/lastSecondCh'){
+    if(req.url === '/lastCh'){
         writeHTML("excels/week2/bookCh.xlsx");
     }
 
-    if(req.url === '/lastSecondPt'){
+    if(req.url === '/lastPt'){
         writeHTML("excels/week2/bookPt.xlsx");
     }
 
-    if(req.url === '/lastSecondSb'){
+    if(req.url === '/lastSb'){
         writeHTML("excels/week2/bookSb.xlsx");
     }
 
