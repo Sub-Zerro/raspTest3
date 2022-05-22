@@ -365,83 +365,7 @@ const server = http.createServer((req, res) => {
 
             //console.log(stringResponse);
 
-            res.write(`
-        <!doctype html>
-            <html lang="en">
-            <head>
-            <meta charset="UTF-8">
-                         <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-                                     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-                         <title>Schedule 17 of the Gymnasium</title>
-                         <style>
 
-                            body{
-                                min-width: 1456px;
-                            }
-
-                            span{
-                                display: inline-block;
-
-                                width: 250px;
-                                height: 20px;
-                                
-                                text-align: center;
-                                
-                                /*border: 1px solid red;*/
-                                
-                                
-
-                            }
-                            
-                            .headingsDiv{
-                                display: inline;
-                                justify-content: space-between;
-                            }
-
-                            div{
-                                max-width: 1644px;
-                                max-height: 26px;
-
-                            }
-                            
-                            .btn0{
-                                margin-left: 154px;
-                            }
-                            
-                            button:not(:first-child) {
-                                margin-left: 220px;
-                            }
-                            
-                            .Motivation{
-                                border: 5px solid #e5d121;
-                                width: 900px;
-                            }
-
-                            /*@media screen and (orientation: landscape){*/
-                            /*    div{*/
-                            /*        position: fixed;*/
-                            /*        width: 100%;*/
-                            /*        */
-                            /*    }*/
-                            /*}*/
-
-                         </style>
-            </head>
-            <body>
-
-                
-
-                <div><b>${obj.dayOfWeek[0]}</b></div><br>
-                
-                <div class="headingsDiv">
-
-                Классы:
-
-                    
-
-            </body>
-            </html>
-    `)
 
             function write(btnI) {
                 alert(`Вы нажали на ${obj.headings[btnI]}`);
@@ -450,50 +374,154 @@ const server = http.createServer((req, res) => {
             for (let i = 0; i < obj.headings.length; i++) {
                 res.write(`
 
-                
-                    <button class="btn${[i]}">${obj.headings[i]}</button>
-                
-
-                
-
-
+                    <script>
+                        let zgolovokIzmeneny${[i]} = document.getElementById('izmRasp');
+                        console.log(zgolovokIzmeneny${[i]});
+                        let a${[i]} = document.createElement("button");
+                        let zagolovokIzmenenyClass${[i]} = document.getElementById('now-show-class');
+                        a${[i]}.textContent = '${obj.headings[i]}';
+                        zagolovokIzmenenyClass${[i]}.textContent = '${obj.headings[0]}';
+                        
+                        
+                        let firstDiscipline${[i]} = document.getElementById('one');
+                        let secondDiscipline${[i]} = document.getElementById('two');
+                        let thirdDiscipline${[i]} = document.getElementById('three');
+                        let fourthDiscipline${[i]} = document.getElementById('four');
+                        let fifthDiscipline${[i]} = document.getElementById('five');
+                        let sixthDiscipline${[i]} = document.getElementById('six');
+                        console.log(firstDiscipline${[i]});
+                        
+                        zgolovokIzmeneny${[i]}.append(a${[i]});
+                        firstDiscipline${[i]}.textContent = '${disciplineObj.coloumns[0][0] ? disciplineObj.coloumns[0][0] : ''}';
+                        secondDiscipline${[i]}.textContent = '${disciplineObj.coloumns[0][1] ? disciplineObj.coloumns[0][1] : ''}';
+                        thirdDiscipline${[i]}.textContent = '${disciplineObj.coloumns[0][2] ? disciplineObj.coloumns[0][2] : ''}';
+                        fourthDiscipline${[i]}.textContent = '${disciplineObj.coloumns[0][3] ? disciplineObj.coloumns[0][3] : ''}';
+                        fifthDiscipline${[i]}.textContent = '${disciplineObj.coloumns[0][4] ? disciplineObj.coloumns[0][4] : ''}';
+                        sixthDiscipline${[i]}.textContent = '${disciplineObj.coloumns[0][5] ? disciplineObj.coloumns[0][5] : ''}';
+                        
+                        const checkA${[i]} = '7а';
+                        const checkB${[i]} = '7б';
+                        const checkC${[i]} = '7в';
+                        
+                        // function checkClass(class){
+                        //     if (class.textContent == 'Рома'){
+                        //         console.log('это Рома');
+                        //     }
+                        // }
+                        
+                        a${[i]}.addEventListener('click', ()=>{
+                            zagolovokIzmenenyClass${[i]}.textContent = '${obj.headings[i]}';
+                        })
+                    </script>
             `);
             } // вывод классов через цикл, берущий за основу колличество классов в obj.headings
 
-
-            res.write(`</div>`);
-            res.write(`<br>`)
-
-            for (let i = 0; i < obj.time.length; i++) {
-                res.write(`
-                    <div>${[i]}. ${obj.time[i]}
-                    <span id="${[i]}">${disciplineObj.coloumns[0][i] ? disciplineObj.coloumns[0][i] :
-                    '                   '} ${obj.classRoom[i] ? obj.classRoom[i] : '    '}</span>
-                    <span>${obj.anotherDisciplines[0][i] ? obj.anotherDisciplines[0][i]
-                    : '                   '} ${obj.anotherClassrooms[0][i] ? obj.anotherClassrooms[0][i] : '    '}</span>
-                    <span>${obj.anotherDisciplines[1][i] ? obj.anotherDisciplines[1][i]
-                    : '                   '} ${obj.anotherClassrooms[1][i] ? obj.anotherClassrooms[1][i] : '    '}</span>
-                    <span>${obj.anotherDisciplines[2][i] ? obj.anotherDisciplines[2][i]
-                    : '                   '} ${obj.anotherClassrooms[2][i] ? obj.anotherClassrooms[2][i] : '    '}</span>
-                    <span>${obj.anotherDisciplines[3][i] ? obj.anotherDisciplines[3][i]
-                    : '                   '} ${obj.anotherClassrooms[3][i] ? obj.anotherClassrooms[3][i] : '    '}</span>
-                    <span>${obj.anotherDisciplines[4][i] ? obj.anotherDisciplines[4][i]
-                    : '                   '} ${obj.anotherClassrooms[4][i] ? obj.anotherClassrooms[4][i] : '    '}</span>
-                    <span>${obj.anotherDisciplines[5][i] ? obj.anotherDisciplines[5][i]
-                    : '                   '} ${obj.anotherClassrooms[5][i] ? obj.anotherClassrooms[5][i] : '    '}</span>
-                    <span>${obj.anotherDisciplines[6][i] ? obj.anotherDisciplines[6][i]
-                    : '                   '} ${obj.anotherClassrooms[6][i] ? obj.anotherClassrooms[6][i] : '    '}</span>
-                    <span>${obj.anotherDisciplines[7][i] ? obj.anotherDisciplines[7][i]
-                    : '                   '} ${obj.anotherClassrooms[7][i] ? obj.anotherClassrooms[7][i] : '    '}</span>
-                    <span>${obj.anotherDisciplines[8][i] ? obj.anotherDisciplines[8][i]
-                    : '                   '} ${obj.anotherClassrooms[8][i] ? obj.anotherClassrooms[8][i] : '    '}</span>
-                    </div>
-        `);
-            } // // вывод времени через цикл, берущий за основу колличество ячеек времени в obj.times
-
             res.write(`
-            <br>
-        `)
+                <script>
+                    let oneDiscipline = document.getElementById('one');
+                    let twoDiscipline = document.getElementById('two');
+                    let threeDiscipline = document.getElementById('three');
+                    let fourDiscipline = document.getElementById('four');
+                    let fiveDiscipline = document.getElementById('five');
+                    let sixDiscipline = document.getElementById('six');
+                    
+                    let zgolovokIzmenenyV2 = document.getElementById('izmRasp');
+                    
+                    let buttons = document.querySelectorAll('button');
+                    console.log(buttons);
+                    let btn1 = buttons[0];
+                    let btn2 = buttons[1] ? buttons[1] : null;
+                    let btn3 = buttons[2] ? buttons[2] : null;
+                    let btn4 = buttons[3] ? buttons[3] : null;
+                    let btn5 = buttons[4] ? buttons[4] : null;
+                    let btn6 = buttons[5] ? buttons[5] : null;
+                    let btn7 = buttons[6] ? buttons[6] : null;
+                    let btn8 = buttons[7] ? buttons[7] : null;
+                    let btn9 = buttons[8] ? buttons[8] : null;
+                    let btn10 = buttons[9] ? buttons[9] : null;
+                    
+                    btn1.addEventListener('click', ()=>{
+                        oneDiscipline.textContent = '${disciplineObj.coloumns[0][0] ? disciplineObj.coloumns[0][0] : ''}';
+                        twoDiscipline.textContent = '${disciplineObj.coloumns[0][1] ? disciplineObj.coloumns[0][1] : ''}';
+                        threeDiscipline.textContent = '${disciplineObj.coloumns[0][2] ? disciplineObj.coloumns[0][2] : ''}';
+                        fourDiscipline.textContent = '${disciplineObj.coloumns[0][3] ? disciplineObj.coloumns[0][3] : ''}';
+                        fiveDiscipline.textContent = '${disciplineObj.coloumns[0][4] ? disciplineObj.coloumns[0][4] : ''}';
+                        sixDiscipline.textContent = '${disciplineObj.coloumns[0][5] ? disciplineObj.coloumns[0][5] : ''}';
+                    })
+                    
+                    if (btn2!=null){
+                        btn2.addEventListener('click', ()=>{
+                        oneDiscipline.textContent = '${obj.anotherDisciplines[0][0] ? obj.anotherDisciplines[0][0] : ''}';
+                        twoDiscipline.textContent = '${obj.anotherDisciplines[0][1] ? obj.anotherDisciplines[0][1] : ''}';
+                        threeDiscipline.textContent = '${obj.anotherDisciplines[0][2] ? obj.anotherDisciplines[0][2] : ''}';
+                        fourDiscipline.textContent = '${obj.anotherDisciplines[0][3] ? obj.anotherDisciplines[0][3] : ''}';
+                        fiveDiscipline.textContent = '${obj.anotherDisciplines[0][4] ? obj.anotherDisciplines[0][4] : ''}';
+                        sixDiscipline.textContent = '${obj.anotherDisciplines[0][5] ? obj.anotherDisciplines[0][5] : ''}';
+                        })
+                    }
+                    
+                    if (btn3!=null){
+                        btn3.addEventListener('click', ()=>{
+                        oneDiscipline.textContent = '${obj.anotherDisciplines[1][0] ? obj.anotherDisciplines[1][0] : ''}';
+                        twoDiscipline.textContent = '${obj.anotherDisciplines[1][1] ? obj.anotherDisciplines[1][1] : ''}';
+                        threeDiscipline.textContent = '${obj.anotherDisciplines[1][2] ? obj.anotherDisciplines[1][2] : ''}';
+                        fourDiscipline.textContent = '${obj.anotherDisciplines[1][3] ? obj.anotherDisciplines[1][3] : ''}';
+                        fiveDiscipline.textContent = '${obj.anotherDisciplines[1][4] ? obj.anotherDisciplines[1][4] : ''}';
+                        sixDiscipline.textContent = '${obj.anotherDisciplines[1][5] ? obj.anotherDisciplines[1][5] : ''}';
+                        })
+                    }
+                    
+                    if (btn4!=null){
+                        btn4.addEventListener('click', ()=>{
+                        oneDiscipline.textContent = '${obj.anotherDisciplines[2][0] ? obj.anotherDisciplines[2][0] : ''}';
+                        twoDiscipline.textContent = '${obj.anotherDisciplines[2][1] ? obj.anotherDisciplines[2][1] : ''}';
+                        threeDiscipline.textContent = '${obj.anotherDisciplines[2][2] ? obj.anotherDisciplines[2][2] : ''}';
+                        fourDiscipline.textContent = '${obj.anotherDisciplines[2][3] ? obj.anotherDisciplines[2][3] : ''}';
+                        fiveDiscipline.textContent = '${obj.anotherDisciplines[2][4] ? obj.anotherDisciplines[2][4] : ''}';
+                        sixDiscipline.textContent = '${obj.anotherDisciplines[2][5] ? obj.anotherDisciplines[2][5] : ''}';
+                        })
+                    }
+                    
+                    if (btn5!=null){
+                        btn5.addEventListener('click', ()=>{
+                        oneDiscipline.textContent = '${obj.anotherDisciplines[3][0] ? obj.anotherDisciplines[3][0] : ''}';
+                        twoDiscipline.textContent = '${obj.anotherDisciplines[3][1] ? obj.anotherDisciplines[3][1] : ''}';
+                        threeDiscipline.textContent = '${obj.anotherDisciplines[3][2] ? obj.anotherDisciplines[3][2] : ''}';
+                        fourDiscipline.textContent = '${obj.anotherDisciplines[3][3] ? obj.anotherDisciplines[3][3] : ''}';
+                        fiveDiscipline.textContent = '${obj.anotherDisciplines[3][4] ? obj.anotherDisciplines[3][4] : ''}';
+                        sixDiscipline.textContent = '${obj.anotherDisciplines[3][5] ? obj.anotherDisciplines[3][5] : ''}';
+                        })
+                    }
+                    
+                    if (btn6!=null){
+                        btn6.addEventListener('click', ()=>{
+                        oneDiscipline.textContent = '${obj.anotherDisciplines[4][0] ? obj.anotherDisciplines[4][0] : ''}';
+                        twoDiscipline.textContent = '${obj.anotherDisciplines[4][1] ? obj.anotherDisciplines[4][1] : ''}';
+                        threeDiscipline.textContent = '${obj.anotherDisciplines[4][2] ? obj.anotherDisciplines[4][2] : ''}';
+                        fourDiscipline.textContent = '${obj.anotherDisciplines[4][3] ? obj.anotherDisciplines[4][3] : ''}';
+                        fiveDiscipline.textContent = '${obj.anotherDisciplines[4][4] ? obj.anotherDisciplines[4][4] : ''}';
+                        sixDiscipline.textContent = '${obj.anotherDisciplines[4][5] ? obj.anotherDisciplines[4][5] : ''}';
+                        })
+                    }
+                    
+                    if (btn7!=null){
+                        btn7.addEventListener('click', ()=>{
+                        oneDiscipline.textContent = '${obj.anotherDisciplines[5][0] ? obj.anotherDisciplines[5][0] : ''}';
+                        twoDiscipline.textContent = '${obj.anotherDisciplines[5][1] ? obj.anotherDisciplines[5][1] : ''}';
+                        threeDiscipline.textContent = '${obj.anotherDisciplines[5][2] ? obj.anotherDisciplines[5][2] : ''}';
+                        fourDiscipline.textContent = '${obj.anotherDisciplines[5][3] ? obj.anotherDisciplines[5][3] : ''}';
+                        fiveDiscipline.textContent = '${obj.anotherDisciplines[5][4] ? obj.anotherDisciplines[5][4] : ''}';
+                        sixDiscipline.textContent = '${obj.anotherDisciplines[5][5] ? obj.anotherDisciplines[5][5] : ''}';
+                        })
+                    }
+                    
+                    
+                    
+                </script>
+            `)
+
+
+
 
 
 
@@ -617,69 +645,336 @@ const server = http.createServer((req, res) => {
                 <title>Расписание 17 гимназии</title>
                 
                 <style>
-                    body{
-                    background-color:#5FBDCE;
-                }
-                    .lastUpdates{
-                        display: inline-block;
+                    .main{
+                        position: relative;
+                        width: 1920px;
+                        height: 1080px;
+                        
+
+                        background: #d0d0d0;
                     }
                     
-                    .lastSecondUpdates{
-                        display: inline-block;
+                    .main-bar{
+                        box-sizing: border-box;
+
+                        position: absolute;
+                        width: 260px;
+                        height: 1080px;
+                        left: 2px;
+                        top: -6px;
+
+                        background: #2b2b34;
+
                     }
-                    li{
+                    
+                    .gimnName{
+                        position: absolute;
+                        width: 197px;
+                        height: 88px;
+                        left: 19px;
+                        top: 14px;
+
+                        /* Header 1 */
+
+                        font-family: 'Montserrat';
+                        font-style: normal;
+                        font-weight: 900;
+                        font-size: 20px;
+                        line-height: 44px;
+
+                        color: #FBE492;
+                    }
+                    
+                    .weekDay-ul{
+                        margin-top: 170px;
+
+                        
                         list-style-type: none;
                     }
+                    .weekDay-li-week{
+                        font-size: 25px;
+                        margin-top: 25px;
+                        color: #FFFFFF;
+                    }
+                    .weekDay-li{
+                        margin-top: 25px;
+                        color: #FFFFFF;
+                    }
                     a{
-                            text-decoration: none;
-                            display: inline-block;
-                            color: #2E2E2E;
-                            padding: 10px 30px;
-                            margin: 10px 20px;
-                            border-radius: 10px;
-                            font-family: 'Montserrat', sans-serif;
-                            text-transform: uppercase;
-                            letter-spacing: 2px;
-                            background-color:#9EEFE1;
-                            background-size: 200% auto;
-                          }
-                          a:hover {
-                            background-position: right center;
-                          }
-                          .now{
-                            border: 5px solid red;
-                          }
-                          .last{
-                            background-color:#2cdabc;
+                        margin-top: 100px;
+                        color: #FFFFFF;
+                    }
+                    .weekDay-li-week-change{
+                        margin-top: 22px;
+                        font-size: 25px;
+                        color: #FFFFFF;
+                    }
+                    
+                    .rasp-TABLE{
+                        box-sizing: border-box;
+                        display: flex;
 
-                          }
+                        position: absolute;
+                        width: 1611px;
+                        height: 743px;
+                        left: 286px;
+                        top: 209px;
+                        background: white;
+
+                        border: 1px solid #000000;
+                    }
+                    .RASPISANIE{
+                        position: absolute;
+                        width: 323px;
+                        height: 59px;
+                        left: 309px;
+                        top: 76px;
+
+                        font-family: 'Montserrat', 'sans-serif';
+                        font-style: normal;
+                        font-weight: 900;
+                        font-size: 48px;
+                        line-height: 59px;
+                        /* identical to box height */
+
+
+                        /* Dark grey */
+
+                        color: #3B3B50;
+                    }
+                    .school-img{
+                        position: absolute;
+                        width: 1655px;
+                        height: 280px;
+                        left: 261px;
+                        top: -231px;
+                        
+
+                        /*background: url('https://газетапятница.рф/media/6179555/gimnaziya.jpg');*/
+                        opacity: 50%;
+                    }
+                    
+                    .now-show-class{
+                        position: absolute;
+                            width: 134px;
+                            height: 118px;
+                            left: 50px;
+                            top: 200px;
+
+                            font-family: 'Montserrat', 'sans-serif';
+                            font-style: normal;
+                            font-weight: 900;
+                            font-size: 96px;
+                            line-height: 117px;
+
+                            /* Dark grey */
+
+                            color: #3B3B50;  
+                    }
+                    
+                    
+                    .rasp-TABLE-ul-number{
+                        list-style-type: none;
+                        
+                        margin-top: 50px;
+                        font-size: large;
+                        
+                        text-align: center;
+                    }
+                    
+                    .rasp-TABLE-number-li{
+
+                        width: 109px;
+                        height: 49px;
+                        
+                        margin-top: 22px;
+                        padding: 5px;
+
+
+                        background: #F1EDED;
+                    }
+                    
+                    .rasp-TABLE-ul-time{
+                        list-style-type: none;
+                        margin-top: 50px;
+                        font-size: large;
+                        
+                        text-align: center;
+                    }
+                    
+                    .rasp-TABLE-time-li{
+                        width: 109px;
+                        height: 49px;
+                        
+                        margin-top: 22px;
+                        padding: 5px;
+
+
+                        background: #F1EDED;
+                    }
+                    
+                    .rasp-TABLE-ul-discipline{
+                        list-style-type: none;
+                        margin-top: 50px;
+                        font-size: large;
+                        
+                        text-align: center;
+                    }
+                    .rasp-TABLE-discipline-li{
+                        width: 334px;
+                        height: 49px;
+                        
+                        margin-top: 22px;
+                        padding: 5px;
+
+
+                        background: #F1EDED;
+                    }
+                    
+                    .rasp-TABLE-ul-class{
+                        list-style-type: none;
+                        margin-top: 50px;
+                        font-size: large;
+                        
+                        text-align: center;
+                    }
+                    
+                    .rasp-TABLE-class-li{
+                        width: 109px;
+                        height: 49px;
+                        
+                        margin-top: 22px;
+                        padding: 5px;
+
+
+                        background: #F1EDED;
+                    }
+                    
+                    .dop-information{
+                        position: absolute;
+                        width: 868px;
+                        height: 43px;
+                        left: 310px;
+                        top: 804px;
+
+                        font-family: 'Roboto';
+                        font-style: normal;
+                        font-weight: 700;
+                        font-size: 36px;
+                        line-height: 42px;
+                        /* identical to box height */
+
+
+                        color: #3B3B50;
+                    }   
+                    .dop-information-text{
+                        position: absolute;
+                        width: 868px;
+                        height: 29px;
+                        left: 310px;
+                        top: 871px;
+
+                        font-family: 'Roboto';
+                        font-style: normal;
+                        font-weight: 700;
+                        font-size: 24px;
+                        line-height: 28px;
+                        /* identical to box height */
+
+
+                        color: #3B3B50;
+                    }                 
+                    
                 </style>
                 
             </head>
             <body>
-                <div>Выберите день изменения:</div>
-                
-                <ul class="lastUpdates">
-                    <li><a href="/lastPn">Прошлый понедельник</a></li>
-                    <li><a href="/lastVt">Прошлый вторник</a></li>
-                    <li><a href="/lastSr">Прошлый среда</a></li>
-                    <li><a href="/lastCh">Прошлый четверг</a></li>
-                    <li><a href="/lastPt">Прошлый пятница</a></li>
-                    <li><a href="/lastSb">Прошлый суббота</a></li>
-                </ul>
-                
-                <ul class="lastSecondUpdates">
-                    <li><a href="/lastSecondPn">Текущий понедельник</a></li>
-                    <li><a href="/lastSecondVt">Текущий вторник</a></li>
-                    <li><a href="/lastSecondSr">Текущий среда</a></li>
-                    <li><a href="/lastSecondCh">Текущий четверг</a></li>
-                    <li><a href="/lastSecondPt">Текущий пятница</a></li>
-                    <li><a href="/lastSecondSb">Текущий суббота</a></li>
-                </ul>
-                
-                
-                
-                <a href="/nowUpdates">Текущие изменения</a>
+                <div class="main">
+                    <div class="main-bar">
+                        <div class="gimnName">
+                            <h1>Гимназия №17</h1>
+                        </div>
+                        <div class="weekDay">
+                            <ul class="weekDay-ul">
+                                <li class="weekDay-li-week">Текущая неделя</li>
+                                <li><a href="/nowUpdates" class="weekDay-li">Понедельник</a></li>
+                                <li><a href="/lastVt" class="weekDay-li">Вторник</a></li>
+                                <li><a href="/lastSr" class="weekDay-li">Среда</a></li>
+                                <li><a href="/lastCh" class="weekDay-li">Четверг</a></li>
+                                <li><a href="/lastPt" class="weekDay-li">Пятница</a></li>
+                                <li><a href="/lastSb" class="weekDay-li">Суббота</a></li>
+                                <li class="weekDay-li-week-change" class="weekDay-li">Другая неделя</li>
+                            </ul> 
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="school-img">
+                        <img src="https://газетапятница.рф/media/6179555/gimnaziya.jpg" alt="" style="
+                            min-width: 100%;
+                            
+                            /*overflow: hidden;*/
+                            
+                            margin-top: -420px;
+                            margin-bottom: -200px: ; 
+                            /*overflow: hidden;*/
+                        ">
+                    </div>
+                    <h1 class="RASPISANIE">Расписание</h1>
+                    
+                    <div class="rasp-TABLE">
+                        <h2 style="margin-left: 20px" id="izmRasp">Изменения расписания</h2>
+                        
+                        <h1 class="now-show-class" id="now-show-class"></h1>
+                        
+                        <ul class="rasp-TABLE-ul-number">
+                            <li class="rasp-TABLE-number-li">№ урока</li>
+                            <li class="rasp-TABLE-number-li">1</li>
+                            <li class="rasp-TABLE-number-li">2</li>
+                            <li class="rasp-TABLE-number-li">3</li>
+                            <li class="rasp-TABLE-number-li">4</li>
+                            <li class="rasp-TABLE-number-li">5</li>
+                            <li class="rasp-TABLE-number-li">6</li>
+                        </ul>
+                        
+                        <ul class="rasp-TABLE-ul-time">
+                            <li class="rasp-TABLE-time-li">Время</li>
+                            <li class="rasp-TABLE-time-li">13:40 - 14:20</li>
+                            <li class="rasp-TABLE-time-li">14:30 - 15:05</li>
+                            <li class="rasp-TABLE-time-li">15:20 - 15:55</li>
+                            <li class="rasp-TABLE-time-li">16:10 - 16:45</li>
+                            <li class="rasp-TABLE-time-li">17:00 - 17:35</li>
+                            <li class="rasp-TABLE-time-li">17:50 - 18:25</li>
+                        </ul>
+                        
+                        <ul class="rasp-TABLE-ul-discipline">
+                            <li class="rasp-TABLE-discipline-li">Предмет</li>
+                            <li class="rasp-TABLE-discipline-li" id="one"></li>
+                            <li class="rasp-TABLE-discipline-li" id="two"></li>
+                            <li class="rasp-TABLE-discipline-li" id="three"></li>
+                            <li class="rasp-TABLE-discipline-li" id="four"></li>
+                            <li class="rasp-TABLE-discipline-li" id="five"></li>
+                            <li class="rasp-TABLE-discipline-li" id="six"></li>
+                        </ul>
+                        
+                        <ul class="rasp-TABLE-ul-class">
+                            <li class="rasp-TABLE-class-li">Предмет</li>
+                            <li class="rasp-TABLE-class-li"></li>
+                            <li class="rasp-TABLE-class-li"></li>
+                            <li class="rasp-TABLE-class-li"></li>
+                            <li class="rasp-TABLE-class-li"></li>
+                            <li class="rasp-TABLE-class-li"></li>
+                            <li class="rasp-TABLE-class-li"></li>
+                        </ul>
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                    <h2 class="dop-information">Дополнительная информация</h2>
+                    <h3 class="dop-information-text">Отсутствует</h3>
+                </div>
             </body>
         </html>
     `)
