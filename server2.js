@@ -651,10 +651,9 @@ const server = http.createServer((req, res) => {
 
             res.write(`
 
-                <br><br><br><br>
 
                 <div class="footer">
-                    <h5>Сайт разработали: Елембаев-Беломорских Роман, Жиделев Николай,7в</h5>
+                    <h5>&copy; 2022 Расписание 17 Гимназия<br>Разработали страницу с расписанием ученики 7 "В" класса Гимназии №17 Елембаев-Беломорских Роман, Жиделев Николай.</h5>
                 </div>
             `);
 
@@ -947,8 +946,16 @@ const server = http.createServer((req, res) => {
 
 
                         color: #3B3B50;
-                    }                 
-                    
+                    }              
+                    a{
+                        text-decoration: none;
+                        font-size:20px;
+                    }   
+                    h5{
+                        height:20px;
+                        font-size:20px;
+                        text-align:center;
+                    }
                 </style>
                 
             </head>
@@ -960,13 +967,13 @@ const server = http.createServer((req, res) => {
                         </div>
                         <div class="weekDay">
                             <ul class="weekDay-ul">
-                                <li class="weekDay-li-week">Текущая неделя</li>
-                                <li><a href="/nowPn" class="weekDay-li">Понедельник</a></li>
-                                <li><a href="/nowVt" class="weekDay-li">Вторник</a></li>
-                                <li><a href="/nowSr" class="weekDay-li">Среда</a></li>
-                                <li><a href="/nowCh" class="weekDay-li">Четверг</a></li>
-                                <li><a href="/nowPt" class="weekDay-li">Пятница</a></li>
-                                <li><a href="/nowSb" class="weekDay-li">Суббота</a></li>
+                                <li class="weekDay-li-week">Текущая неделя</li><br>
+                                <li><a href="/nowPn" class="weekDay-li">Понедельник</a></li><br>
+                                <li><a href="/nowVt" class="weekDay-li">Вторник</a></li><br>
+                                <li><a href="/nowSr" class="weekDay-li">Среда</a></li><br>
+                                <li><a href="/nowCh" class="weekDay-li">Четверг</a></li><br>
+                                <li><a href="/nowPt" class="weekDay-li">Пятница</a></li><br>
+                                <li><a href="/nowSb" class="weekDay-li">Суббота</a></li><br>
                                 <li class="weekDay-li-week-change" class="weekDay-li">Другая неделя</li>
                             </ul> 
                         </div>
