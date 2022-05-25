@@ -661,6 +661,146 @@ const server = http.createServer((req, res) => {
         });
     }
 
+    // let nameOfUser = "";
+    // let emailOfUser = "";
+    //
+    //
+    //
+    // function registration(){
+    //     res.write(`
+    //         <script>
+    //             let str1 = document.querySelector('body > div > div.rasp-TABLE > ul.rasp-TABLE-ul-number');
+    //             let str2 = document.querySelector('body > div > div.rasp-TABLE > ul.rasp-TABLE-ul-time');
+    //             let str3 = document.querySelector('body > div > div.rasp-TABLE > ul.rasp-TABLE-ul-discipline');
+    //             let str4 = document.querySelector('body > div > div.rasp-TABLE > ul.rasp-TABLE-ul-class');
+    //
+    //             let table = document.querySelector('body > div > div.rasp-TABLE');
+    //             table.style.flexDirection = "column";
+    //
+    //             str1.style.display = "none";
+    //             str2.style.display = "none";
+    //             str3.style.display = "none";
+    //             str4.style.display = "none";
+    //
+    //             let input = document.createElement("input");
+    //             let input2 = document.createElement("input");
+    //             let submitBtn = document.createElement("button");
+    //
+    //             let zagolovokName = document.createElement("h3");
+    //             zagolovokName.textContent = "Ваше имя и фамилия";
+    //             let zagolovokEmail = document.createElement("h3");
+    //             zagolovokEmail.textContent = "Ваш адрес электронной почты";
+    //
+    //             submitBtn.type = "submit";
+    //             submitBtn.className = "submitBtn";
+    //             submitBtn.textContent = "Отправить";
+    //
+    //             input.type = "text";
+    //             input.style.width = "600px";
+    //             input.style.height = "30px";
+    //             input.className = "name-input";
+    //             input.style.placeholder="Ваше имя и фамилия";
+    //
+    //             input2.type = "text";
+    //             input2.style.width = "600px";
+    //             input2.style.height = "30px";
+    //             input2.className = "email-input";
+    //             table.append(zagolovokName);
+    //             table.append(input);
+    //             table.append(zagolovokEmail);
+    //             table.append(input2);
+    //             table.append(submitBtn);
+    //
+    //             let userName = "";
+    //             let userEmail = "";
+    //
+    //             submitBtn.addEventListener('click', ()=>{
+    //                 // if (input.value!=null && input!=undefined){
+    //                 //     if (input2.value!=null && input2!=undefined){
+    //                 //         userName=input.value;
+    //                 //         userEmail=input2.value;
+    //                 //         console.log(userName, userEmail);
+    //                 //     }
+    //                 // }
+    //
+    //                 if(input.value == ""){
+    //                     alert("Пожалуйста, заполните все необходимые поля");
+    //                 } else{
+    //                     userName=input.value;
+    //                     userEmail=input2.value;
+    //
+    //
+    //
+    //
+    //                     console.log(userName, userEmail);
+    //
+    //
+    //                 }
+    //             })
+    //
+    //
+    //
+    //
+    //
+    //             // table.removeChild(str1);
+    //             //
+    //             //
+    //             // let form = document.createElement(<input type="text">);
+    //             // table.append(form);
+    //
+    //         </script>
+    //     `)
+    // }
+
+
+
+    // if (nameOfUser!=""){
+    //     const pg = require('pg');
+    //
+    //     process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = 0;
+    //
+    //     const config = {
+    //         host: 'ec2-44-195-169-163.compute-1.amazonaws.com',
+    //         // Do not hard code your username and password.
+    //         // Consider using Node environment variables.
+    //         user: 'dovpfdvtqiqpig',
+    //         password: '29582c9e51b7a58a215fecb40aa88311170b4e49bc3953347f3d433704d36b9a',
+    //         database: 'd30845016oob61',
+    //         port: 5432,
+    //         ssl: true
+    //     };
+    //
+    //     const client = new pg.Client(config);
+    //
+    //     client.connect(err => {
+    //         if (err) throw err;
+    //         else { queryDatabase(); }
+    //     });
+    //
+    //     function queryDatabase() {
+    //
+    //         console.log(`Running query to PostgreSQL server: ${config.host}`);
+    //
+    //         const query = "select email from users where name = 'Matvey Smolyakov';";
+    //
+    //         client.query(query)
+    //             .then(res => {
+    //                 const rows = res.rows;
+    //
+    //                 rows.map(row => {
+    //                     console.log(`Read: ${JSON.stringify(row)}`);
+    //                 });
+    //
+    //
+    //             })
+    //             .catch(err => {
+    //                 console.log(err);
+    //             });
+    //     }
+    // }
+
+
+
     // if (req.url === '/') {
     //    fs.readFile(
     //        path.join(__dirname, 'htmls', 'indexStart.html'),
@@ -956,6 +1096,33 @@ const server = http.createServer((req, res) => {
                         font-size:20px;
                         text-align:center;
                     }
+                    
+                    
+                    .name-input{
+                        
+                        margin-left: 450px;
+                    }
+                    
+                    .email-input{
+                        margin-top: 20px;
+                        margin-left: 450px;
+                    }
+                    
+                    
+                        
+                    .submitBtn{
+                        width: 100px;
+                        height: 20px;
+                        margin-left: 710px;
+                        margin-top: 20px;
+                    }
+                    
+                    h3{
+                        margin-left: 450px;
+                    }
+
+
+                    
                 </style>
                 
             </head>
@@ -975,6 +1142,7 @@ const server = http.createServer((req, res) => {
                                 <li><a href="/nowPt" class="weekDay-li">Пятница</a></li><br>
                                 <li><a href="/nowSb" class="weekDay-li">Суббота</a></li><br>
                                 <li class="weekDay-li-week-change" class="weekDay-li">Другая неделя</li>
+                                
                             </ul> 
                         </div>
                     </div>
@@ -992,6 +1160,18 @@ const server = http.createServer((req, res) => {
                         ">
                     </div>
                     <h1 class="RASPISANIE">Расписание</h1>
+                    <button style="
+                        background-color: #2e77ff;
+                        margin-left: 1700px;
+                        margin-top: 240px;
+                        width: 150px;
+                        height: 60px;
+                        position:absolute;
+                        z-index: 500;
+                        border-radius: 30px;
+                        color: white;
+                        font-size: 15px;
+                    "><a href="https://pure-mountain-90497.herokuapp.com/">Регистрация</a></button>
                     
                     <div class="rasp-TABLE">
                         <h2 style="margin-left: 20px" id="izmRasp">Изменения расписания</h2>
@@ -1044,7 +1224,7 @@ const server = http.createServer((req, res) => {
                         
                     </div>
                     <h2 class="dop-information">Дополнительная информация</h2>
-                    <h3 class="dop-information-text">Отсутствует</h3>
+                    <h4 class="dop-information-text">Отсутствует</h4>
                 </div>
             </body>
         </html>
@@ -1104,6 +1284,12 @@ const server = http.createServer((req, res) => {
     if(req.url === '/lastSb'){
         writeHTML("excels/week2/bookSb.xlsx");
     }
+
+
+
+
+
+
 
 
 
