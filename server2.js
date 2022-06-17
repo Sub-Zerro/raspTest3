@@ -129,99 +129,99 @@ const server = http.createServer((req, res) => {
                     switch (k) {
                         case (0): {
                             obj.dayOfWeek[i] = valueOfCell[j];
-                            console.log('k', k);
+                            // console.log('k', k);
                             break;
                         }
                         case (1): {
                             obj.number[i] = valueOfCell[j];
-                            console.log('k', k);
+                            // console.log('k', k);
                             break;
                         }
                         case (2): {
                             obj.time[i] = valueOfCell[j];
-                            console.log('k', k);
+                            // console.log('k', k);
                             break;
                         }
                         case (3): {
                             obj.discipline[i] = valueOfCell[j];
-                            console.log('k', k);
+                            // console.log('k', k);
                             break;
                         }
                         case (4): {
                             obj.classRoom[i] = valueOfCell[j];
-                            console.log('k', k);
+                            // console.log('k', k);
                             break;
                         }
 
                         case (5): {
                             obj.anotherDisciplines[0][i] = valueOfCell[j];
-                            console.log('k', k);
+                            // console.log('k', k);
                             break;
                         }
 
                         case (6): {
                             obj.anotherClassrooms[0][i] = valueOfCell[j];
-                            console.log('k', k);
+                            // console.log('k', k);
                             break;
                         }
 
                         case (7): {
                             obj.anotherDisciplines[1][i] = valueOfCell[j];
-                            console.log('k', k);
+                            // console.log('k', k);
                             break;
                         }
 
                         case (8): {
                             obj.anotherClassrooms[1][i] = valueOfCell[j];
-                            console.log('k', k);
+                            // console.log('k', k);
                             break;
                         }
 
                         case (9): {
                             obj.anotherDisciplines[2][i] = valueOfCell[j];
-                            console.log('k', k);
+                            // console.log('k', k);
                             break;
                         }
 
                         case (10): {
                             obj.anotherClassrooms[2][i] = valueOfCell[j];
-                            console.log('k', k);
+                            // console.log('k', k);
                             break;
                         }
 
                         case (11): {
                             obj.anotherDisciplines[3][i] = valueOfCell[j];
-                            console.log('k', k);
+                            // console.log('k', k);
                             break;
                         }
 
                         case (12): {
                             obj.anotherClassrooms[3][i] = valueOfCell[j];
-                            console.log('k', k);
+                            // console.log('k', k);
                             break;
                         }
 
                         case (13): {
                             obj.anotherDisciplines[4][i] = valueOfCell[j];
-                            console.log('k', k);
+                            // console.log('k', k);
                             break;
                         }
 
                         case (14): {
                             obj.anotherClassrooms[4][i] = valueOfCell[j];
-                            console.log('k', k);
+                            // console.log('k', k);
                             break;
                         }
 
                         case (15): {
                             obj.anotherDisciplines[5][i] = valueOfCell[j];
-                            console.log('k', k);
+                            // console.log('k', k);
                             break;
                         }
 
                         case (16): {
                             obj.anotherClassrooms[5][i] = valueOfCell[j];
-                            console.log('k', k);
+                            // console.log('k', k);
                             break;
                         }
 
@@ -722,22 +722,23 @@ const server = http.createServer((req, res) => {
 
     console.log(findStr);
 
+    const {Pool, Client} = require('pg');
+
+    process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = 0;
+
+    const pool = new Pool({
+        host: 'ec2-44-195-169-163.compute-1.amazonaws.com',
+        // Do not hard code your username and password.
+        // Consider using Node environment variables.
+        user: 'dovpfdvtqiqpig',
+        password: '29582c9e51b7a58a215fecb40aa88311170b4e49bc3953347f3d433704d36b9a',
+        database: 'd30845016oob61',
+        port: 5432,
+        ssl: true
+    })
 
     function sendDBView(phoneinfo, ip, date) {
-        const {Pool, Client} = require('pg');
 
-        process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = 0;
-
-        const pool = new Pool({
-            host: 'ec2-44-195-169-163.compute-1.amazonaws.com',
-            // Do not hard code your username and password.
-            // Consider using Node environment variables.
-            user: 'dovpfdvtqiqpig',
-            password: '29582c9e51b7a58a215fecb40aa88311170b4e49bc3953347f3d433704d36b9a',
-            database: 'd30845016oob61',
-            port: 5432,
-            ssl: true
-        })
 
         pool.query(`
             INSERT INTO views(phoneinfo,ip,date)values('${phoneinfo}', '${ip}', '${date}')
