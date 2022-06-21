@@ -737,11 +737,11 @@ const server = http.createServer((req, res) => {
         ssl: true
     })
 
-    function sendDBView(phoneinfo, ip, date) {
+    function sendDBView(ip, date, phoneinfo) {
 
 
         pool.query(`
-            INSERT INTO views(phoneinfo,ip,date)values('${phoneinfo}', '${ip}', '${date}')
+            INSERT INTO views(ip,date, phoneinfo)values('${phoneinfo}', '${ip}', '${date}')
 
     `, (err, res) => {
             console.log(err, res);
@@ -751,7 +751,7 @@ const server = http.createServer((req, res) => {
 
     if (req.on){
         console.log("client on!");
-        sendDBView(findStr, ip.address(), dateStr);
+        sendDBView(ip.address(), dateStr, findStr);
     }
 
     res.write(`
