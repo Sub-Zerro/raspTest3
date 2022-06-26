@@ -3,6 +3,20 @@ const fs = require("fs");
 const path = require("path");
 let countOnline = 0;
 const PORT = process.env.PORT || 3000;
+const {Pool, Client} = require('pg');
+
+process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = 0;
+
+const pool = new Pool({
+    host: 'ec2-44-195-169-163.compute-1.amazonaws.com',
+    // Do not hard code your username and password.
+    // Consider using Node environment variables.
+    user: 'dovpfdvtqiqpig',
+    password: '29582c9e51b7a58a215fecb40aa88311170b4e49bc3953347f3d433704d36b9a',
+    database: 'd30845016oob61',
+    port: 5432,
+    ssl: true
+})
 
 const server = http.createServer((req, res) => {
 
@@ -699,60 +713,8 @@ const server = http.createServer((req, res) => {
 
     // res.write(`Рома`)
 
-    let date = new Date();
-    let Day = date.getDate();
-    let Year = date.getFullYear();
-    let Month = date.getMonth();
-    let Minutes = date.getMinutes();
-    let Hours = date.getHours();
-    let dateStr = `${Hours}:${Minutes} ${Day}.${Month}.${Year}`;
-    console.log(Hours,":",Minutes);
-    console.log(Day, Month, Year);
-    console.log(typeof(dateStr), dateStr);
-
-    const ip = require('ip');
-    var str = /\(/
-
-    let findStr;
-    for (let i = 0; i < req.rawHeaders.length; i++) {
-        if (req.rawHeaders[i].match(str)) {
-            findStr = req.rawHeaders[i];
-        }
-    }
-
-    console.log(findStr);
-
-    const {Pool, Client} = require('pg');
-
-    process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = 0;
-
-    const pool = new Pool({
-        host: 'ec2-44-195-169-163.compute-1.amazonaws.com',
-        // Do not hard code your username and password.
-        // Consider using Node environment variables.
-        user: 'dovpfdvtqiqpig',
-        password: '29582c9e51b7a58a215fecb40aa88311170b4e49bc3953347f3d433704d36b9a',
-        database: 'd30845016oob61',
-        port: 5432,
-        ssl: true
-    })
-
-    function sendDBView(ip, date, phoneinfo) {
 
 
-        pool.query(`
-            INSERT INTO views(ip,date, phoneinfo)values('${phoneinfo}', '${ip}', '${date}')
-
-    `, (err, res) => {
-            console.log(err, res);
-            pool.end();
-        })
-    }
-
-    if (req.on){
-        console.log("client on!");
-        sendDBView(ip.address(), dateStr, findStr);
-    }
 
     res.write(`
         <!DOCTYPE html>
@@ -1110,6 +1072,48 @@ const server = http.createServer((req, res) => {
             </body>
         </html>
     `)
+    if (req.url === '/'){
+        let date = new Date();
+        let Day = date.getDate();
+        let Year = date.getFullYear();
+        let Month = date.getMonth();
+        let Minutes = date.getMinutes();
+        let Hours = date.getHours();
+        let dateStr = `${Hours}:${Minutes} ${Day}.${Month}.${Year}`;
+        console.log(Hours,":",Minutes);
+        console.log(Day, Month, Year);
+        console.log(typeof(dateStr), dateStr);
+
+        const ip = require('ip');
+        var str = /\(/
+
+        let findStr;
+        for (let i = 0; i < req.rawHeaders.length; i++) {
+            if (req.rawHeaders[i].match(str)) {
+                findStr = req.rawHeaders[i];
+            }
+        }
+
+        console.log(findStr);
+
+
+
+        function sendDBView(ip, date, phoneinfo) {
+
+
+            pool.query(`
+            INSERT INTO views(ip,date, phoneinfo)values('${phoneinfo}', '${ip}', '${date}')
+
+    `, (err, res) => {
+                console.log(err, res);
+                pool.end();
+            })
+        }
+
+
+        console.log("client on!");
+        sendDBView(ip.address(), dateStr, findStr);
+    }
 
     if(req.url === '/nowUpdates'){
         writeHTML("book.xlsx");
