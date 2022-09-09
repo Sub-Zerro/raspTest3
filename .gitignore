@@ -1,2 +1,4 @@
-.server2_2
 node_modules
+.idea
+dir.js
+beforeMovieGmail.js

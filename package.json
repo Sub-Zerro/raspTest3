@@ -1,17 +1,30 @@
 {
-  "name": "packet",
+  "name": "heroku-test",
   "version": "1.0.0",
   "description": "",
-  "main": "server2.js",
-  "scripts": {
-    "start": "node server2.js"
+  "main": "serverH2.js",
+  "directories": {
+    "test": "test"
   },
-  "author": "Moki227",
-  "license": "ISC",
   "dependencies": {
+    "del": "^6.1.1",
+    "download": "^8.0.0",
     "exceljs": "^4.3.0",
-    "express": "^4.18.1",
-    "ip": "^1.1.8",
-    "pg": "^8.7.3"
-  }
+    "follow-redirects": "^1.15.1",
+    "mailparser": "^3.5.0",
+    "nodejs-file-downloader": "^4.9.3",
+    "nodemailer": "^6.7.7",
+    "pg": "^8.7.3",
+    "request": "^2.88.2",
+    "rimraf": "^3.0.2",
+    "shelljs": "^0.8.5",
+    "smtp-server": "^3.11.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node serverH2.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
