@@ -635,7 +635,7 @@ setInterval(()=>{
 
                                 console.log(`Running query to PostgreSQL server: ${pool.host}`);
 
-                                const query = 'select email from users where id = 8;';
+                                const query = 'select email from users;';
 
                                 pool.query(query)
                                     .then(res => {
