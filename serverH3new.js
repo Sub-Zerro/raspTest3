@@ -667,12 +667,16 @@ setInterval(()=>{
                             setTimeout(()=>{
                                 for (i = 0; i<arr.length; i++){
                                     var smtpTransport = mailer.createTransport({
-                                        host: 'smtp.mail.ru',
+                                        //host: 'smtp.mail.ru',
+                                        //port: 465,
+                                        host: 'smtp.yandex.ru',
                                         port: 465,
                                         secure: true,
                                         auth: {
-                                            user: 'rasp17gimn@mail.ru',
-                                            pass: 'MzhmQGN4rqivHcdHECUz'
+                                            //user: 'rasp17gimn@mail.ru',
+                                            //pass: 'MzhmQGN4rqivHcdHECUz'
+                                            user: 'rasp17gimn@yandex.ru',
+                                            pass: 'dpleocbwkogegsyb'
                                         }
                                     });
 
