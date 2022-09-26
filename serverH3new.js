@@ -667,21 +667,21 @@ setInterval(()=>{
                             setTimeout(()=>{
                                 for (i = 0; i<arr.length; i++){
                                     var smtpTransport = mailer.createTransport({
-                                        //host: 'smtp.mail.ru',
-                                        //port: 465,
-                                        host: 'smtp.yandex.ru',
+                                        host: 'smtp.mail.ru',
                                         port: 465,
+                                        //host: 'smtp.yandex.ru',
+                                        //port: 465,
                                         secure: true,
                                         auth: {
-                                            //user: 'rasp17gimn@mail.ru',
-                                            //pass: 'MzhmQGN4rqivHcdHECUz'
-                                            user: 'rasp17gimn@yandex.ru',
-                                            pass: 'dpleocbwkogegsyb'
+                                            user: 'rasp17gimn@mail.ru',
+                                            pass: 'MzhmQGN4rqivHcdHECUz'
+                                            //user: 'rasp17gimn@yandex.ru',
+                                            //pass: 'dpleocbwkogegsyb'
                                         }
                                     });
 
                                     var mail = {
-                                        from: "Оповещения расписания 17 гимназии <rasp17gimn@yandex.ru>",
+                                        from: "Оповещения расписания 17 гимназии <rasp17gimn@mail.ru>",
                                         to: `${arr[i]}`,
                                         subject: `Появилось новое изменение`,
                                         //text: "Вы можете посмотреть расписание по ссылке: 'https://gimnasia17.herokuapp.com/'",
