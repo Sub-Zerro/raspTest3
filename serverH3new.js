@@ -681,7 +681,7 @@ setInterval(()=>{
                                     });
 
                                     var mail = {
-                                        from: "Оповещения расписания 17 гимназии <rasp17gimn@mail.ru>",
+                                        from: "Оповещения расписания 17 гимназии <rasp17gimn@yandex.ru>",
                                         to: `${arr[i]}`,
                                         subject: `Появилось новое изменение`,
                                         text: "Вы можете посмотреть расписание по ссылке: https://gimnasia17.herokuapp.com/",
