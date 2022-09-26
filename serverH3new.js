@@ -684,7 +684,7 @@ setInterval(()=>{
                                         from: "Оповещения расписания 17 гимназии <rasp17gimn@yandex.ru>",
                                         to: `${arr[i]}`,
                                         subject: `Появилось новое изменение`,
-                                        text: "Вы можете посмотреть расписание по ссылке: https://gimnasia17.herokuapp.com/",
+                                        text: "Вы можете посмотреть расписание по ссылке: 'https://gimnasia17.herokuapp.com/'",
                                     }
 
                                     smtpTransport.sendMail(mail, function(error, response){
