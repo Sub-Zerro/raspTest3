@@ -1,4 +1,4 @@
-// выделение нужных для работы модулей в nodejs и запись их в отдельные переменные
+﻿// выделение нужных для работы модулей в nodejs и запись их в отдельные переменные
 const http = require("http");
 const fs = require("fs");
 const path = require("path");
@@ -15,12 +15,12 @@ let setArrNumbers = [];
 
 // информация о базе данных на хероку gimnasia17, создание подключения по параметрам
 const pool = new Pool({
-    host: 'ec2-44-195-169-163.compute-1.amazonaws.com',
+    host: 'db.tzyuaqjszrpqxnywukcm.supabase.co',
     // Do not hard code your username and password.
     // Consider using Node environment variables.
-    user: 'dovpfdvtqiqpig',
-    password: '29582c9e51b7a58a215fecb40aa88311170b4e49bc3953347f3d433704d36b9a',
-    database: 'd30845016oob61',
+    user: 'postgres',
+    password: 'wrH_RT@easgfh',
+    database: 'postgres',
     port: 5432,
     ssl: true
 })
@@ -611,12 +611,12 @@ setInterval(()=>{
                             process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = 0;
 
                             const config = {
-                                host: 'ec2-44-195-169-163.compute-1.amazonaws.com',
+                                host: 'db.tzyuaqjszrpqxnywukcm.supabase.co',
                                 // Do not hard code your username and password.
                                 // Consider using Node environment variables.
-                                user: 'dovpfdvtqiqpig',
-                                password: '29582c9e51b7a58a215fecb40aa88311170b4e49bc3953347f3d433704d36b9a',
-                                database: 'd30845016oob61',
+                                user: 'postgres',
+                                password: 'wrH_RT@easgfh',
+                                database: 'postgres',
                                 port: 5432,
                                 ssl: true
                             };
@@ -716,7 +716,8 @@ setInterval(()=>{
                 try {
 
                     // код...
-                    writeHTML('test/book.xlsx');
+                    //writeHTML('test/book.xlsx');
+                    writeHTML(path.join(__dirname, '/test', '/book.xlsx'));
                 } catch (err) {
 
                     // обработка ошибки
