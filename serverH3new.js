@@ -1599,7 +1599,7 @@ const server = http.createServer((req, res) => {
                                     </select>-->
                                 </li>
                                                 
-                                <li style="margin-top: 300px"><a href="https://pure-mountain-90497.herokuapp.com/">Регистрация</a></li>
+                                <li style="margin-top: 300px"><a href="https://raspregister.onrender.com">Регистрация</a></li>
                             </ul> 
                         </div>
                     </div>
