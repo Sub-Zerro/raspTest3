@@ -578,7 +578,7 @@ setInterval(()=>{
                     }
                     console.log(popLastDate, numberOfDate)
                     if(popLastDate === numberOfDate){
-                        console.log("Уже есть в базе этотт день");
+                        console.log("Уже есть в базе этот день");
                     }
 
 
@@ -599,7 +599,7 @@ setInterval(()=>{
                                 addNewRasp(numberOfDate ? numberOfDate : null, dayOfWeekForBD ? dayOfWeekForBD : null, smenaForBD ? smenaForBD : null, obj.number[k] ? obj.number[k] : 0, obj.time[k] ? obj.time[k] : null, obj.headings[i] ? obj.headings[i] : null, obj.anotherDisciplines[i][k] ? obj.anotherDisciplines[i][k] : null, obj.anotherClassrooms[i][k] ? obj.anotherClassrooms[i][k] : null)
                             }
                         }
-                        console.log("Нулевое чиисло в obj.number: ", obj.number[0]);
+                        console.log("Нулевое число в obj.number: ", obj.number[0]);
                         console.log(obj.number);
                         // setTimeout(()=>{
                         //     console.log(numberOfDate, popLastDate);
@@ -1252,10 +1252,9 @@ const server = http.createServer((req, res) => {
     //                 </script>
     //             `)
     // }
-
     res.write(`
         <!DOCTYPE html>
-            <html lang="en">
+            <html lang="ru">
             <head>
                 <meta charset="UTF-8">
                 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -1263,6 +1262,8 @@ const server = http.createServer((req, res) => {
                 <title>Расписание 17 гимназии</title>
                 
                 <style>
+                
+                    @media screen and (min-width:1001px){
                         .linkOfDBnumber{
                             margin-left: 5px;
                         }
@@ -1413,11 +1414,10 @@ const server = http.createServer((req, res) => {
                         width: 1655px;
                         height: 280px;
                         left: 261px;
-                        top: -231px;
+                        top: 168px;
                         
 
-                        /*background: url('https://газетапятница.рф/media/6179555/gimnaziya.jpg');*/
-                        opacity: 50%;
+                        /*background: url('https://cdn.discordapp.com/attachments/989420407511732265/1054259814643011584/gimnaziya.jpg');*/
                     }
                     
                     .now-show-class{
@@ -1555,6 +1555,300 @@ const server = http.createServer((req, res) => {
                         font-size:20px;
                         text-align:center;
                     }
+                    #Registr{
+                        margin-top: 300px; 
+                    }
+                    #izmRasp{
+                        margin-left: 20px;
+                    }
+                    }
+                    @media screen and (max-width: 1000px) {
+                        .linkOfDBnumber{
+                            margin-left: 5px;
+                        }
+                      .look-calendar {
+                        
+                        width:200px;
+                        border:1px solid #c0c0c0;
+                        padding:6px;
+                        margin-left: 0;
+                        background-color: white;
+                        /*margin: 0 auto;    */
+                      }
+                      #calendar {
+                        width: 100%;
+                        line-height: 1.2em;
+                        font-size: 15px;
+                        text-align: center;
+                        border-spacing:0px;
+                      }
+                      #calendar tr.dn td {
+                        font-size: 15px;
+                      }
+                      #calendar thead tr:last-child {
+                        font-size: small;
+                        color: #555555;
+                      }
+                      #calendar thead tr:nth-child(1) td:nth-child(2) {
+                        color: #323232;
+                      }
+                      #calendar thead tr:nth-child(1) td:nth-child(1):hover,
+                      #calendar thead tr:nth-child(1) td:nth-child(3):hover {
+                        cursor: pointer;
+                      }
+                      #calendar tbody td {
+                        color: #2c567a;
+                      }
+                      #calendar tbody td:nth-child(n+6),
+                      #calendar .holiday {
+                        color: #e78c5c;
+                      }
+                      #calendar tbody td.today {
+                        background: #dc0000;
+                        color: #fff;
+                      }
+                
+                
+                
+                
+                    .main{
+                        position: relative;
+                        width: 375px;
+                        height: 812px;
+                        
+    
+                        background: #d0d0d0;
+                    }
+                    
+                    .main-bar{
+                        box-sizing: border-box;
+    
+                        position: absolute;
+                        width: 100%;
+                        height: 13%;
+                        top: -6px;
+    
+                        background: #2b2b34;
+    
+                    }
+                    
+                    .gimnName{
+                        display:none;
+                    }
+                    
+                    .weekDay-ul{
+    
+                        
+                        list-style-type: none;
+                    }
+                    .weekDay-li-week{
+                        font-size: 90%;
+                        margin-top: 25px;
+                        color: #FFFFFF;
+                    }
+                    .weekDay-li{
+                        margin-top: 25px;
+                        color: #FFFFFF;
+                    }
+                    a{
+                        color: #FFFFFF;
+                    }
+                    .weekDay-li-week-change{
+                        margin-top: 22px;
+                        font-size: 25px;
+                        color: #FFFFFF;
+                    }
+                    
+                    .rasp-TABLE{
+                        box-sizing: border-box;
+                        display: flex;
+    
+                        position: absolute;
+                        width: 100%;
+                        height: 83%;
+                    
+                        background: white;
+                        top:12.2%;
+                    }
+                    .RASPISANIE{
+                        position: absolute;
+                        width: 323px;
+                        height: 59px;
+                        left: 309px;
+                        top: 76px;
+    
+                        font-family: 'Montserrat', 'sans-serif';
+                        font-style: normal;
+                        font-weight: 900;
+                        font-size: 48px;
+                        line-height: 59px;
+                        /* identical to box height */
+    
+    
+                        /* Dark grey */
+    
+                        color: #3B3B50;
+                    }
+                    .now-show-class{
+                        position: absolute;
+                            left: 2%;
+    
+                            font-family: 'Montserrat', 'sans-serif';
+                            font-style: normal;
+                            font-size: 120%;
+                            line-height: 300%;
+    
+                            /* Dark grey */
+    
+                            color: #3B3B50;  
+                    }
+                    
+                    
+                    .rasp-TABLE-ul-number{
+                        list-style-type: none;
+                        
+                        text-align: center;
+                        padding-inline-start:1%;
+                        margin-top:20%;
+                        margin-bottom:0%;
+
+                    }
+                    
+                    .rasp-TABLE-number-li{
+    
+                        width: 60%;
+                        height: 7%;
+                        
+                        margin-top: 3.9%;
+                        padding: 5px;
+    
+    
+                        background: #F1EDED;
+                        font-size:16px;
+                    }
+                    
+                    .rasp-TABLE-ul-time{
+                        list-style-type: none;
+                        font-size: large;
+                        padding-inline-start:1%;
+                        text-align: center;
+                        margin-bottom:0%;
+                        margin-top:20%;
+                        margin-left:-5.5%;
+                    }
+                    
+                    .rasp-TABLE-time-li{
+                        width: 60%;
+                        height: 6.8%;
+                        
+                        margin-top: 3.8%;
+                        padding: 5px;
+                        font-size:16px;
+                        
+    
+                        background: #F1EDED;
+                    }
+                    
+                    .rasp-TABLE-ul-discipline{
+                        list-style-type: none;
+                        
+                        text-align: center;
+                        padding-inline-start:1%;
+                        
+                        margin-top:20%;
+                        margin-bottom:0%;
+                        margin-left:-8.5%;
+                    }
+                    .rasp-TABLE-discipline-li{
+                        width: 150%;
+                        height: 7.1%;
+                        
+                        margin-top: 2%;
+                        padding: 5px;
+    
+    
+                        background: #F1EDED;
+                    }
+                    
+                    .rasp-TABLE-ul-class{
+                        list-style-type: none;
+                        padding-inline-start:14.9%;
+                        
+                        text-align: center;
+                        
+                        margin-top:20%;
+                        margin-bottom:0%;
+                    }
+                    
+                    .rasp-TABLE-class-li{
+                        width: 100%;
+                        height: 7.12%;
+                        
+                        margin-top: 2.7%  ;
+                        padding: 5px;
+    
+    
+                        background: #F1EDED;
+                    }
+                    
+                    .dop-information{
+                        position: absolute;
+                        width: 53%;
+                        left: 10%;
+                        top: 73%;
+    
+                        font-family: 'Roboto';
+                        font-style: normal;
+                        font-size: 90%;
+                        /* identical to box height */
+    
+    
+                        color: #3B3B50;
+                    }   
+                    .dop-information-text{
+                        position: absolute;
+                        left: 22%;
+                        top: 74.7%;
+    
+                        font-family: 'Roboto';
+                        font-style: normal;
+                        font-size: 100%;
+                        /* identical to box height */
+    
+    
+                        color: #3B3B50;
+                    }   
+                    .footer{
+                        margin-top:180%;
+                        position:absolute;
+                        height:20px;
+                        text-align:center;
+                    }              
+                    
+                    #selectNumber{
+                        padding-inline-start:0%;
+                    }
+                    .weekDay-ul{
+                        padding-inline-start:2%;
+                    }
+                    #izmRasp{
+    font-size: 75%;
+    margin-block-start: 0.5%;
+    height:3%;
+    margin-left: 1%;
+    width:100%;
+    position: absolute;
+                    }
+                    #Registr{
+                        margin-top: 130%; 
+                    }
+                    .school-img{
+                        display:none;
+                    }
+                    body{
+                        margin:0px;
+                    }
+                        }
                 </style>
                 
             </head>
@@ -1562,7 +1856,7 @@ const server = http.createServer((req, res) => {
                 <div class="main">
                     <div class="main-bar">
                         <div class="gimnName">
-                            <h1>Гимназия №17</h1>
+                            <p>Гимназия №17</p>
                         </div>
                         <div class="weekDay">
                             <ul class="weekDay-ul">
@@ -1599,14 +1893,14 @@ const server = http.createServer((req, res) => {
                                     </select>-->
                                 </li>
                                                 
-                                <li style="margin-top: 300px"><a href="https://raspregister.onrender.com">Регистрация</a></li>
+                                <li id='Registr'><a href="https://raspregister.onrender.com/">Регистрация</a></li>
                             </ul> 
                         </div>
                     </div>
                     
                     
                     <div class="school-img">
-                        <img src="https://газетапятница.рф/media/6179555/gimnaziya.jpg" alt="" style="
+                        <img src="https://cdn.discordapp.com/attachments/989420407511732265/1054259814643011584/gimnaziya.jpg" alt="" style="
                             min-width: 100%;
                             
                             /*overflow: hidden;*/
@@ -1631,7 +1925,7 @@ const server = http.createServer((req, res) => {
 <!--                    "><a href="https://pure-mountain-90497.herokuapp.com/">Регистрация</a></button>-->
                     
                     <div class="rasp-TABLE">
-                        <h2 style="margin-left: 20px" id="izmRasp">Изменения расписания</h2>
+                        <h2 id="izmRasp">Изменения расписания</h2>
                         
                         <h1 class="now-show-class" id="now-show-class"></h1>
                         
@@ -1682,9 +1976,12 @@ const server = http.createServer((req, res) => {
                     </div>
                     <h2 class="dop-information">Дополнительная информация</h2>
                     <h3 class="dop-information-text">Отсутствует</h3>
+                    <div class="footer">
+                <h5>&copy; 2022 Расписание 17 Гимназия<br>Разработали веб-приложение с расписанием ученики 8 "В" класса Гимназии №17 Елембаев-Беломорских Роман, Жиделев Николай.</h5>
+            </div>
                 </div>
                 
-
+                
             </body>
         </html>
     `)
@@ -1705,13 +2002,6 @@ const server = http.createServer((req, res) => {
                     </script>
                 `)
     }
-    res.write(`
-
-
-                <div class="footer">
-                    <h5>&copy; 2022 Расписание 17 Гимназия<br>Разработали веб-приложение с расписанием ученики 7 "В" класса Гимназии №17 Елембаев-Беломорских Роман, Жиделев Николай.</h5>
-                </div>
-            `);
 
     if(req.url==='/'){
         writeHTML(obj);
@@ -1773,3 +2063,4 @@ server.listen(PORT, () => {
 // просто так комментарий
 
 
+//Киберпанк2077

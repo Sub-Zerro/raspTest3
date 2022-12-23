@@ -916,6 +916,7 @@ const server = http.createServer((req, res) => {
                             // obj.classes[i][2].push(res.rows[k]['kabinet']);
                             obj2.classes[i][1][res.rows[k]['numberofdiscipline']] = res.rows[k]['discipline'];
                             obj2.classes[i][2][res.rows[k]['numberofdiscipline']] = res.rows[k]['kabinet'];
+                            obj2.classes[i][3][res.rows[k]['numberofdiscipline']] = res.rows[k]['time'];
                         }
                     }
                 }
@@ -1613,8 +1614,8 @@ const server = http.createServer((req, res) => {
                 
                     .main{
                         position: relative;
-                        width: 812px;
-                        height: 375px;
+                        width: 375px;
+                        height: 812px;
                         
     
                         background: #d0d0d0;
@@ -1624,9 +1625,8 @@ const server = http.createServer((req, res) => {
                         box-sizing: border-box;
     
                         position: absolute;
-                        width: 15%;
-                        height: 100%;
-                        left: 2px;
+                        width: 100%;
+                        height: 13%;
                         top: -6px;
     
                         background: #2b2b34;
@@ -1634,23 +1634,10 @@ const server = http.createServer((req, res) => {
                     }
                     
                     .gimnName{
-                        position: absolute;
-                        left: 19px;
-                        top: 14px;
-    
-                        /* Header 1 */
-    
-                        font-family: 'Montserrat';
-                        font-style: normal;
-                        font-weight: 900;
-                        font-size: 80%;
-                        line-height: 44px;
-    
-                        color: #FBE492;
+                        display:none;
                     }
                     
                     .weekDay-ul{
-                        margin-top: 100%;
     
                         
                         list-style-type: none;
@@ -1678,10 +1665,11 @@ const server = http.createServer((req, res) => {
                         display: flex;
     
                         position: absolute;
-                        width: 85%;
-                        height: 100%;
-                        left: 15.3%;
+                        width: 100%;
+                        height: 83%;
+                    
                         background: white;
+                        top:12.2%;
                     }
                     .RASPISANIE{
                         position: absolute;
@@ -1705,11 +1693,10 @@ const server = http.createServer((req, res) => {
                     .now-show-class{
                         position: absolute;
                             left: 2%;
-                            top: 15%;
     
                             font-family: 'Montserrat', 'sans-serif';
                             font-style: normal;
-                            font-size: 200%;
+                            font-size: 120%;
                             line-height: 300%;
     
                             /* Dark grey */
@@ -1723,21 +1710,22 @@ const server = http.createServer((req, res) => {
                         
                         text-align: center;
                         padding-inline-start:1%;
-                        margin-top:0%;
+                        margin-top:20%;
                         margin-bottom:0%;
+
                     }
                     
                     .rasp-TABLE-number-li{
     
-                        width: 70%;
-                        height: 10%;
+                        width: 60%;
+                        height: 7%;
                         
                         margin-top: 3.9%;
                         padding: 5px;
     
     
                         background: #F1EDED;
-                        font-size:70%;
+                        font-size:16px;
                     }
                     
                     .rasp-TABLE-ul-time{
@@ -1746,16 +1734,17 @@ const server = http.createServer((req, res) => {
                         padding-inline-start:1%;
                         text-align: center;
                         margin-bottom:0%;
-                        margin-top:0%;
+                        margin-top:20%;
+                        margin-left:-5.5%;
                     }
                     
                     .rasp-TABLE-time-li{
-                        width: 70%;
-                        height: 10%;
+                        width: 60%;
+                        height: 6.8%;
                         
-                        margin-top: 4.1%;
+                        margin-top: 3.8%;
                         padding: 5px;
-                        font-size:70%;
+                        font-size:16px;
                         
     
                         background: #F1EDED;
@@ -1767,12 +1756,13 @@ const server = http.createServer((req, res) => {
                         text-align: center;
                         padding-inline-start:1%;
                         
-                        margin-top:0%;
+                        margin-top:20%;
                         margin-bottom:0%;
+                        margin-left:-8.5%;
                     }
                     .rasp-TABLE-discipline-li{
-                        width: 200%;
-                        height: 10%;
+                        width: 150%;
+                        height: 7.1%;
                         
                         margin-top: 2%;
                         padding: 5px;
@@ -1783,17 +1773,17 @@ const server = http.createServer((req, res) => {
                     
                     .rasp-TABLE-ul-class{
                         list-style-type: none;
-                        padding-inline-start:16%;
+                        padding-inline-start:14.9%;
                         
                         text-align: center;
                         
-                        margin-top:0%;
+                        margin-top:20%;
                         margin-bottom:0%;
                     }
                     
                     .rasp-TABLE-class-li{
                         width: 100%;
-                        height: 10%;
+                        height: 7.12%;
                         
                         margin-top: 2.7%  ;
                         padding: 5px;
@@ -1804,9 +1794,9 @@ const server = http.createServer((req, res) => {
                     
                     .dop-information{
                         position: absolute;
-                        width: 10%;
-                        left: 17%;
-                        top: 65%;
+                        width: 53%;
+                        left: 10%;
+                        top: 73%;
     
                         font-family: 'Roboto';
                         font-style: normal;
@@ -1818,8 +1808,8 @@ const server = http.createServer((req, res) => {
                     }   
                     .dop-information-text{
                         position: absolute;
-                        left: 17%;
-                        top: 73%;
+                        left: 22%;
+                        top: 74.7%;
     
                         font-family: 'Roboto';
                         font-style: normal;
@@ -1830,13 +1820,12 @@ const server = http.createServer((req, res) => {
                         color: #3B3B50;
                     }   
                     .footer{
-                        display:none;
-                    }              
-                    h5{
+                        margin-top:180%;
+                        position:absolute;
                         height:20px;
-                        font-size:20px;
                         text-align:center;
-                    }
+                    }              
+                    
                     #selectNumber{
                         padding-inline-start:0%;
                     }
@@ -1846,14 +1835,19 @@ const server = http.createServer((req, res) => {
                     #izmRasp{
     font-size: 75%;
     margin-block-start: 0.5%;
-    height:50%;
-    margin-left: 0.5%;
+    height:3%;
+    margin-left: 1%;
+    width:100%;
+    position: absolute;
                     }
                     #Registr{
                         margin-top: 130%; 
                     }
                     .school-img{
                         display:none;
+                    }
+                    body{
+                        margin:0px;
                     }
                         }
                 </style>
@@ -1900,7 +1894,7 @@ const server = http.createServer((req, res) => {
                                     </select>-->
                                 </li>
                                                 
-                                <li id='Registr'><a href="https://pure-mountain-90497.herokuapp.com/">Регистрация</a></li>
+                                <li id='Registr'><a href="https://raspregister.onrender.com/">Регистрация</a></li>
                             </ul> 
                         </div>
                     </div>
@@ -1983,9 +1977,12 @@ const server = http.createServer((req, res) => {
                     </div>
                     <h2 class="dop-information">Дополнительная информация</h2>
                     <h3 class="dop-information-text">Отсутствует</h3>
+                    <div class="footer">
+                <h5>&copy; 2022 Расписание 17 Гимназия<br>Разработали веб-приложение с расписанием ученики 8 "В" класса Гимназии №17 Елембаев-Беломорских Роман, Жиделев Николай.</h5>
+            </div>
                 </div>
                 
-
+                
             </body>
         </html>
     `)
@@ -2006,13 +2003,6 @@ const server = http.createServer((req, res) => {
                     </script>
                 `)
     }
-    res.write(`
-
-
-                <div class="footer">
-                    <h5>&copy; 2022 Расписание 17 Гимназия<br>Разработали веб-приложение с расписанием ученики 8 "В" класса Гимназии №17 Елембаев-Беломорских Роман, Жиделев Николай.</h5>
-                </div>
-            `);
 
     if(req.url==='/'){
         writeHTML(obj);
