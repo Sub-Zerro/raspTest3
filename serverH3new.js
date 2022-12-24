@@ -1264,7 +1264,7 @@ const server = http.createServer((req, res) => {
                 
                 <style>
                 
-                    @media screen and (min-width:1001px){
+                @media (min-width: 1001px) or (min-height: 1001px){
                         .linkOfDBnumber{
                             margin-left: 5px;
                         }
@@ -1563,7 +1563,7 @@ const server = http.createServer((req, res) => {
                         margin-left: 20px;
                     }
                     }
-                    @media screen and (max-width: 1000px) {
+                    @media (max-width: 1000px) and (max-height: 1000px)  {
                         .linkOfDBnumber{
                             margin-left: 5px;
                         }
