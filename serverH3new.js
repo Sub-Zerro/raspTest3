@@ -1712,17 +1712,19 @@ const server = http.createServer((req, res) => {
                         padding-inline-start:1%;
                         margin-top:20%;
                         margin-bottom:0%;
+                        margin-right:3%;
 
                     }
                     
                     .rasp-TABLE-number-li{
     
-                        width: 60%;
+                       
+                        width: 69%;
                         height: 7%;
-                        
                         margin-top: 3.9%;
                         padding: 5px;
-    
+                        max-width: 51px;
+                        max-height: 52px;
     
                         background: #F1EDED;
                         font-size:16px;
@@ -1736,16 +1738,18 @@ const server = http.createServer((req, res) => {
                         margin-bottom:0%;
                         margin-top:20%;
                         margin-left:-5.5%;
+                        margin-right:1%;
                     }
                     
                     .rasp-TABLE-time-li{
-                        width: 60%;
-                        height: 6.8%;
                         
-                        margin-top: 3.8%;
+                        height: 7%;
+                        width: 69%;
+                        margin-top: 2.6%;
                         padding: 5px;
                         font-size:16px;
-                        
+                        max-width: 77px;
+                        max-height: 52px;
     
                         background: #F1EDED;
                     }
@@ -1758,22 +1762,24 @@ const server = http.createServer((req, res) => {
                         
                         margin-top:20%;
                         margin-bottom:0%;
-                        margin-left:-8.5%;
+                        margin-left:-6%;
+                        min-width:154px;
                     }
                     .rasp-TABLE-discipline-li{
-                        width: 150%;
-                        height: 7.1%;
-                        
-                        margin-top: 2%;
+                       
+                        height: 7%;
+                        width: 165%;
+                        margin-top: 1.4%;
                         padding: 5px;
     
-    
+                        max-width: 162px;
+                        max-height: 53px;
                         background: #F1EDED;
                     }
                     
                     .rasp-TABLE-ul-class{
                         list-style-type: none;
-                        padding-inline-start:14.9%;
+                        padding-inline-start:5%;
                         
                         text-align: center;
                         
@@ -1782,12 +1788,13 @@ const server = http.createServer((req, res) => {
                     }
                     
                     .rasp-TABLE-class-li{
+                      
                         width: 100%;
-                        height: 7.12%;
-                        
-                        margin-top: 2.7%  ;
+                        height: 7%;
+                        margin-top: 3.2%;
                         padding: 5px;
-    
+                         max-width: 77px;
+                        max-height: 53px;
     
                         background: #F1EDED;
                     }
