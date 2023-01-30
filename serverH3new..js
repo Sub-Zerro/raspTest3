@@ -674,7 +674,7 @@ setInterval(()=>{
                                         secure: true,
                                         auth: {
                                             user: 'rasp17gimn@mail.ru',
-                                            pass: 'RixpQ4UeA9CcA2tYYjXF'
+                                            pass: 'MzhmQGN4rqivHcdHECUz'
                                             //user: 'rasp17gimn@yandex.ru',
                                             //pass: 'dpleocbwkogegsyb'
                                         }
